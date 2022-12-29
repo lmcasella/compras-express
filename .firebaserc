@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "compras-express-11d5f": {
+      "hosting": {
+        "compras-express": [
+          "compras-express-11d5f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "compras-express-11d5f"
+  }
+}
