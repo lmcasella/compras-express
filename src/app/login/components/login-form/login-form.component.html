@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div fxLayout="column">
+    <formly-form
+      [form]="form"
+      [fields]="fields"
+      [model]="model"
+      [options]="options"
+    ></formly-form>
+  </div>
+
+  <div>
+    <button type="submit" mat-raised-button color="primary" class="form-button">
+      Ingresar
+    </button>
+  </div>
+</form>
