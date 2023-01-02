@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="signUp()">
+  <div fxLayout="column">
+    <formly-form
+      [form]="form"
+      [fields]="fields"
+      [model]="model"
+      [options]="options"
+    ></formly-form>
+  </div>
+
+  <div>
+    <button type="submit" mat-raised-button color="primary" class="form-button">
+      Registrarse
+    </button>
+  </div>
+</form>

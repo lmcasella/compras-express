@@ -8,42 +8,34 @@ import {
 } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
+import { MaterialModule } from '../material/material.module';
 
-// export function emailValidator(
-//   control: AbstractControl
-// ): ValidationErrors | null {
-//   const value = control.value;
-//   return value && !value.includes('@') ? { email: true } : null;
-// }
-
-// export function emailValidatorMessage(err: any, field: FormlyFieldConfig) {
-//   return `"${field.formControl?.value}" no es un email válido`;
-// }
+import { NavbarPageComponent } from './navbar/pages/navbar-page.component';
+import { NavbarTitleComponent } from './navbar/components/navbar-title/navbar-title.component';
+import { NavbarCartComponent } from './navbar/components/navbar-cart/navbar-cart.component';
+import { NavbarProfileComponent } from './navbar/components/navbar-profile/navbar-profile.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
     FormlyModule.forRoot({
-      // validators: [{ name: 'email', validation: emailValidator }],
-      // validationMessages: [
-      //   { name: 'email', message: emailValidatorMessage },
-      //   { name: 'required', message: 'Este campo es obligatorio' },
-      // ],
       validationMessages: [
         { name: 'required', message: 'Este campo es obligatorio' },
       ],
     }),
     FormlyMaterialModule,
     ReactiveFormsModule,
+    MaterialModule,
   ],
-  declarations: [],
+  declarations: [NavbarPageComponent, NavbarTitleComponent, NavbarCartComponent, NavbarProfileComponent],
   exports: [
     CommonModule,
     FlexLayoutModule,
     FormlyModule,
     FormlyMaterialModule,
     ReactiveFormsModule,
+    NavbarPageComponent,
   ],
 })
 export class SharedModule {}

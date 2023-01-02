@@ -1,11 +1,17 @@
 import { createAction, props } from '@ngrx/store';
 import { Login } from 'src/app/models/auth.interface';
 
-export const loginRequest = createAction('[Auth Page] User Login Request');
+export const loginRequest = createAction(
+  '[Auth Page] Login Request',
+  props<{
+    email: string;
+    password: string;
+  }>()
+);
 
 export const loginSuccess = createAction(
   '[Auth Page] User Login Success',
-  props<{ user: Login }>()
+  props<{ LoginSuccessResponse: Login }>()
 );
 
 export const loginFailure = createAction(

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loginRequest } from '../../../state/actions/auth.actions';
 
 @Component({
   selector: 'app-login-page',
@@ -8,9 +7,7 @@ import { loginRequest } from '../../../state/actions/auth.actions';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
-  constructor(private store: Store<any>) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.store.dispatch(loginRequest());
-  }
+  ngOnInit() {}
 }
