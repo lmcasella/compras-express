@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import { ROOT_REDUCERS } from './state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './state/effects/auth.effects';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +37,8 @@ import { AuthEffects } from './state/effects/auth.effects';
     RegisterModule,
     HomeModule,
     EffectsModule.forRoot([AuthEffects]),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
   exports: [],
   providers: [],
