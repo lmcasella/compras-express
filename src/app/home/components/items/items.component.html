@@ -1,27 +1,28 @@
-<div style="margin-top: 50px">
-  <div fxFlex=></div>
-  <div fxFlex="95">
-    <div fxFlex="23">
-      <mat-card *ngFor="let item of items" class="example-card">
-        <img
-          mat-card-image
-          src="{{ item.image }}"
-          alt=""
-        />
-        <mat-card-header>
-          <mat-card-title>{{item.name}}</mat-card-title>
-        </mat-card-header>
-    
-        <mat-card-content>
-          <p>
-            {{item.description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-stroked-button>Añadir al carrito</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<div
+  class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 d-flex justify-content-start"
+>
+  <div class="col mt-4" *ngFor="let item of products$ | async">
+    <mat-card class="content-products">
+      <img
+        style="background-color: #f6f6f6; padding: 20px 50px"
+        mat-card-image
+        src="{{ item.image }}"
+        alt=""
+      />
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content style="height: 80px">
+        <p>
+          {{ item.description }}
+        </p>
+
+        <h6>${{ item.price | number : "1.2-2" }}</h6>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="primary">Añadir al carrito</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  <div fxFlex></div>
 </div>

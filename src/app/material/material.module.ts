@@ -8,6 +8,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   exports: [
@@ -20,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatBadgeModule,
     MatMenuModule,
+    MatProgressBarModule,
   ],
 })
 export class MaterialModule {}

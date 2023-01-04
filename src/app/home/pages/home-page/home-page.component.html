@@ -1,5 +1,21 @@
-<div class="bg-home">
+<header>
   <app-navbar-page></app-navbar-page>
+  <mat-progress-bar
+    color="accent"
+    mode="indeterminate"
+    *ngIf="loading$ | async"
+  ></mat-progress-bar>
+</header>
 
-  <app-items></app-items>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+
+    <div class="col-10 col-sm-10 col-md-9 col-lg-9 col-lg-8 mt-5">
+      <h4>Últimos smartphones!</h4>
+      <app-items></app-items>
+    </div>
+
+    <div class="col"></div>
+  </div>
 </div>

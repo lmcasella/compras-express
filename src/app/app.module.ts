@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import { ROOT_REDUCERS } from './state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './state/effects/auth.effects';
+import { ProductsEffects } from './state/effects/products.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,7 @@ import { AuthEffects } from './state/effects/auth.effects';
     LoginModule,
     RegisterModule,
     HomeModule,
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([ProductsEffects]),
   ],
   exports: [],
   providers: [],

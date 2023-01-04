@@ -1,6 +1,9 @@
 <div>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <button mat-button [matMenuTriggerFor]="menu">Perfil</button>
   <mat-menu #menu="matMenu">
+    <div fxLayoutAlign="center center">
+      <p>Email</p>
+    </div>
     <button mat-menu-item (click)="onLogout()">Cerrar sesión</button>
   </mat-menu>
 </div>
