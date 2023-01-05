@@ -30,7 +30,6 @@ import { ProductsEffects } from './state/effects/products.effects';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-
     AppRoutingModule,
     LoginModule,
     RegisterModule,

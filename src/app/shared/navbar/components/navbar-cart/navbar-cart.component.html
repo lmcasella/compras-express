@@ -1,5 +1,7 @@
 <div fxLayoutAlign="start center">
-  <button mat-icon-button>
-    <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+  <button mat-icon-button (click)="openSidenavCart()">
+    <mat-icon matBadge="15" matBadgeColor="warn" #drawer
+      >shopping_cart</mat-icon
+    >
   </button>
 </div>

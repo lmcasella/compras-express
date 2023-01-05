@@ -19,18 +19,5 @@ export class ItemsComponent implements OnInit, OnDestroy {
     this.products$ = this.store.select(selectProductsList);
   }
 
-  // getItems() {
-  //   this.homeService.getProducts().subscribe((data) => {
-  //     this.items = [];
-  //     data.forEach((element) => {
-  //       this.items.push({
-  //         id: element.payload.doc.id,
-  //         ...(element.payload.doc.data() as {}),
-  //       });
-  //     });
-  //     console.log(this.items);
-  //   });
-  // }
-
   ngOnDestroy() {}
 }
