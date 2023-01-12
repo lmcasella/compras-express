@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CartPageComponent } from '../../../../home/pages/cart-page/cart-page.component';
+import { HomeService } from '../../../../home/services/home.service';
 
 @Component({
   selector: 'app-navbar-cart',
@@ -8,7 +9,11 @@ import { CartPageComponent } from '../../../../home/pages/cart-page/cart-page.co
   styleUrls: ['./navbar-cart.component.css'],
 })
 export class NavbarCartComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public homeService: HomeService) {}
+
+  getCarts() {
+    console.log(this.homeService.getCarts());
+  }
 
   openSidenavCart() {
     const dialogRef = this.dialog.open(CartPageComponent, {

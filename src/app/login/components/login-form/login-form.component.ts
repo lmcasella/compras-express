@@ -13,6 +13,7 @@ import {
 import * as AuthActions from '../../../state/actions/auth.actions';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-form',
@@ -23,7 +24,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private store: Store<AppState>,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   form = new FormGroup({});
@@ -63,19 +65,29 @@ export class LoginFormComponent implements OnInit {
 
   async logIn() {
     if (this.form.invalid) {
-      return;
+      this.toastr.error('Formulario invalido', 'Error', {
+        timeOut: 3000,
+        positionClass: 'toast-bottom-center',
+      });
     } else {
       const result = await this.loginService.login(
         this.model.email,
         this.model.password
       );
       if (result) {
-        console.log('Login success');
+        this.toastr.success('Logeado con éxito', 'Bienvenido/a!', {
+          timeOut: 3000,
+          positionClass: 'toast-bottom-center',
+        });
 
         this.form.reset();
-        this.router.navigate(['/']);
+        await this.router.navigate(['/']);
       } else {
-        console.log('Login failed');
+        this.toastr.error('Email o Contraseña incorrecta', 'Error', {
+          timeOut: 3000,
+          positionClass: 'toast-bottom-center',
+        });
+        this.form.reset();
       }
       console.log(result);
     }

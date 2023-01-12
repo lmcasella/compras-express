@@ -11,7 +11,10 @@ import { AppState } from 'src/app/state/app.state';
   styleUrls: ['./items.component.css'],
 })
 export class ItemsComponent implements OnInit, OnDestroy {
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    public homeService: HomeService
+  ) {}
 
   products$: Observable<any> = new Observable();
 

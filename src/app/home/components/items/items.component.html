@@ -21,7 +21,13 @@
         <h6>${{ item.price | number : "1.2-2" }}</h6>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-stroked-button color="primary">Añadir al carrito</button>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="homeService.addProductCart(item)"
+        >
+          Añadir al carrito
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

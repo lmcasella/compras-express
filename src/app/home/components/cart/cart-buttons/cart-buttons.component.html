@@ -1,3 +1,9 @@
-<button mat-raised-button color="primary" [mat-dialog-close]="true">
+<button
+  class="form-button"
+  mat-raised-button
+  color="primary"
+  [mat-dialog-close]="true"
+  (click)="homeService.submitCart()"
+>
   Realizar compra
 </button>

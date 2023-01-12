@@ -10,6 +10,7 @@ import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 import { MaterialModule } from '../material/material.module';
 import { AgGridModule } from 'ag-grid-angular';
+import { ToastrModule } from 'ngx-toastr';
 
 import { NavbarPageComponent } from './navbar/pages/navbar-page.component';
 import { NavbarTitleComponent } from './navbar/components/navbar-title/navbar-title.component';
@@ -29,6 +30,7 @@ import { NavbarProfileComponent } from './navbar/components/navbar-profile/navba
     ReactiveFormsModule,
     MaterialModule,
     AgGridModule,
+    ToastrModule.forRoot(),
   ],
   declarations: [
     NavbarPageComponent,
@@ -44,6 +46,7 @@ import { NavbarProfileComponent } from './navbar/components/navbar-profile/navba
     ReactiveFormsModule,
     NavbarPageComponent,
     AgGridModule,
+    ToastrModule,
   ],
 })
 export class SharedModule {}

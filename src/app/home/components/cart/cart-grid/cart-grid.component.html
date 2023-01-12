@@ -1,6 +1,9 @@
 <ag-grid-angular
   class="ag-theme-material"
   style="width: 100%; height: 100%"
+  [rowData]="rowData$ | async"
   [columnDefs]="columnDefs"
-  [rowData]="rowData"
+  [rowSelection]="'multiple'"
+  [animateRows]="true"
+  (gridReady)="onGridReady($event)"
 ></ag-grid-angular>

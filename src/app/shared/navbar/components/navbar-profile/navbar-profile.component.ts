@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../../shared.service';
+import { HomeService } from '../../../../home/services/home.service';
 
 @Component({
   selector: 'app-navbar-profile',
@@ -8,9 +9,14 @@ import { SharedService } from '../../../shared.service';
   styleUrls: ['./navbar-profile.component.css'],
 })
 export class NavbarProfileComponent {
-  constructor(private sharedService: SharedService, private router: Router) {}
+  constructor(
+    private homeService: HomeService,
+    private sharedService: SharedService,
+    private router: Router
+  ) {}
 
-  onLogout() {
+  async onLogout() {
+    this.homeService.cancelCart();
     this.sharedService.logout();
     this.router.navigate(['/login']);
   }
